@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description/>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.78",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "9fae677c1c2b455dbad522cb8cfe5b46": {
+          "id": "9fae677c1c2b455dbad522cb8cfe5b46",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "d918613a84b24f6c95586e4132d97bb4": {
+          "id": "d918613a84b24f6c95586e4132d97bb4",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "561c017effe54ed7a01bfb6346264e3a": {
+          "id": "561c017effe54ed7a01bfb6346264e3a",
+          "stepType": "TextPrompt",
+          "name": "short description",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please briefly describe the issue you are facing."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "34e982a332db4da58ad0e3eceaf66e2d",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "5ba1c446cf984ac5a6fcddf5b18d3b78": {
+          "id": "5ba1c446cf984ac5a6fcddf5b18d3b78",
+          "stepType": "CrudAction",
+          "name": "CreateProblemREc",
+          "template": {
+            "query": {
+              "terms": [
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "short_description",
+                  "expression": "{{vaInputs.short_description}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.short_description}}",
+                            "displayValue": "Input Variables➛Greeting Notes"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "e65f651c19464d81bed758e151139a33"
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "description",
+                  "expression": "{{vaInputs.description}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.description}}",
+                            "displayValue": "Input Variables➛Description"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "aadd7adbf99e4ebb9a8011b6012f1842"
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "work_notes_list",
+                  "expression": "056373fc9377e2107b32f0ba2bba107d",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": "056373fc9377e2107b32f0ba2bba107d"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "0400738268bd4e3399334ddb3f3e0b3d"
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "assigned_to",
+                  "expression": "{{vaInputs.user}}",
+                  "id": "2038419824d948b295ed0084453c9364"
+                }
+              ]
+            },
+            "queryString": "short_description={{vaInputs.short_description}}^description={{vaInputs.description}}^work_notes_list=056373fc9377e2107b32f0ba2bba107d^assigned_to={{vaInputs.user}}"
+          },
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "5a6e9110d20e4bf0a436180ca917fd45"
+        },
+        "10af312c84d147349679c443fceb793b": {
+          "id": "10af312c84d147349679c443fceb793b",
+          "stepType": "RecordOutput",
+          "name": "Ticket Number",
+          "variableId": "5a6e9110d20e4bf0a436180ca917fd45",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "problem",
+          "fields": [
+            "number",
+            "short_description",
+            "state"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        },
+        "49bfc60824ef40c1976b7a32df564396": {
+          "id": "49bfc60824ef40c1976b7a32df564396",
+          "stepType": "TextOutput",
+          "name": "Success Notes",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Ticket created successfully! Your problem reference number is  "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.createproblemrec.number}}",
+                        "displayValue": "Input Variables➛CreateProblemREc➛Number"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": "."
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "d0a6be3df4d44ccf948c0854cff09a50"
+            }
+          ],
+          "isCollapsible": true,
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "74cf5a6a73ee4409837d7d821eaa071b": {
+          "name": "Check",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Please Choose one of the options below"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "6060331eff8b475da14f799b86d63d75",
+          "detailDescription": "",
+          "id": "74cf5a6a73ee4409837d7d821eaa071b",
+          "stepType": "ChoicePrompt",
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false
+        },
+        "fbf05c74582c4306a9d3106910c0ee6a": {
+          "id": "fbf05c74582c4306a9d3106910c0ee6a",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "038c0b2e15694359b96157e547808f67": {
+          "id": "038c0b2e15694359b96157e547808f67",
+          "stepType": "TextPrompt",
+          "name": "Ticket Number",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Could you share the ticket reference number?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "5fb18a0efe30491cb63eabe367b93858",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "c28fe821c9714e3e936d6fb67230c6b3": {
+          "id": "c28fe821c9714e3e936d6fb67230c6b3",
+          "stepType": "LookupRecord",
+          "name": "Ticket Details",
+          "condition": {
+            "mode": "glide_query",
+            "value": "number={{vaVars.TicketNumber}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "339858fd7055476ba6956090cc5fcfee"
+        },
+        "43bf95d48e71480390d05e2272c80804": {
+          "id": "43bf95d48e71480390d05e2272c80804",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "268e000793ed4082b764ffe27d47f310": {
+          "id": "268e000793ed4082b764ffe27d47f310",
+          "stepType": "RecordOutput",
+          "name": "Existing Ticket Details",
+          "variableId": "339858fd7055476ba6956090cc5fcfee",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "problem",
+          "fields": [
+            "number",
+            "short_description",
+            "state"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        },
+        "be14d3f9651d4029b2210df4d4819ecc": {
+          "id": "be14d3f9651d4029b2210df4d4819ecc",
+          "stepType": "TextPrompt",
+          "name": "Error",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "The ticket number you entered does not exist.Kindly confirm and re-enter."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "c20d4b2c9ee848139fff20d9bfcaac80",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "d88f181e79fe495eb3793621fda3b0d7": {
+          "id": "d88f181e79fe495eb3793621fda3b0d7",
+          "stepType": "BooleanPrompt",
+          "name": "Confimation",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Is there anything else I can help you with today?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "448a746681d640f4b01f6dd849c5f274",
+          "detailDescription": ""
+        },
+        "2732e486abd6436aba0b2f082e7bc3b3": {
+          "id": "2732e486abd6436aba0b2f082e7bc3b3",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "1680044fbd1447049d19c868271d0ecc": {
+          "id": "1680044fbd1447049d19c868271d0ecc",
+          "name": "AssignNumber",
+          "script": "(function execute() {\n\nvar ticket = vaInputs.ticket_number\nif(ticket){\nvaVars.TicketNumber = ticket\n}\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "47436ea4547e4f7290283e859f9b6fe4": {
+          "id": "47436ea4547e4f7290283e859f9b6fe4",
+          "name": "ReenterNumber",
+          "script": "(function execute() {\n vaVars.TicketNumber = vaInputs.error\n})()\n",
+          "stepType": "ScriptAction",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "fce4821727b649f49285e07389c57179": {
+          "id": "fce4821727b649f49285e07389c57179",
+          "stepType": "TextPrompt",
+          "name": "Description",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Thanks! Can you provide a few more details about the issue, so we can create a complete support ticket for you."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "hasCardHeader": false,
+          "cardMetadata": {
+            "mode": "card",
+            "metadataScript": "",
+            "cardTemplate": "",
+            "cardFields": {},
+            "cardDefinition": {}
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "42209b2c5ed242f294bdbf61988e7d0f",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        }
+      },
+      "edges": [
+        {
+          "id": "69d0c17392cd497a91eeac389a0071dc",
+          "edgeType": "Branch",
+          "source": "2732e486abd6436aba0b2f082e7bc3b3",
+          "target": "d918613a84b24f6c95586e4132d97bb4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.confimation=false",
+            "mode": "query"
+          },
+          "label": "false"
+        },
+        {
+          "id": "316411c29a754be18bb8acd7f5a638a3",
+          "edgeType": "Edge",
+          "source": "10af312c84d147349679c443fceb793b",
+          "target": "d88f181e79fe495eb3793621fda3b0d7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c87ebfad7a964f69a27483700880ae2e",
+          "edgeType": "Branch",
+          "source": "2732e486abd6436aba0b2f082e7bc3b3",
+          "target": "74cf5a6a73ee4409837d7d821eaa071b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.confimation=true",
+            "mode": "query"
+          },
+          "label": "true"
+        },
+        {
+          "id": "93caa6f7fad14e77b876e9603d005c79",
+          "edgeType": "Edge",
+          "source": "268e000793ed4082b764ffe27d47f310",
+          "target": "d88f181e79fe495eb3793621fda3b0d7",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "70f2032243ee4d11ab0bffdddedecd83",
+          "edgeType": "Edge",
+          "source": "5ba1c446cf984ac5a6fcddf5b18d3b78",
+          "target": "49bfc60824ef40c1976b7a32df564396",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6393685f99714a4daf34103eb65d28e0",
+          "edgeType": "Edge",
+          "source": "49bfc60824ef40c1976b7a32df564396",
+          "target": "10af312c84d147349679c443fceb793b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "82e59a61c354493ba83b1f8cfd454363",
+          "edgeType": "Edge",
+          "source": "9fae677c1c2b455dbad522cb8cfe5b46",
+          "target": "74cf5a6a73ee4409837d7d821eaa071b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b1145497b8c14ed986cc1e898e54e167",
+          "edgeType": "Edge",
+          "source": "74cf5a6a73ee4409837d7d821eaa071b",
+          "target": "fbf05c74582c4306a9d3106910c0ee6a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0da79e8840ad4c0082480de44833a474",
+          "edgeType": "Branch",
+          "source": "fbf05c74582c4306a9d3106910c0ee6a",
+          "target": "561c017effe54ed7a01bfb6346264e3a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check=Register New Issue",
+            "mode": "query"
+          },
+          "label": "New"
+        },
+        {
+          "id": "554fbe3cc994461eaa0e83e2a75418aa",
+          "edgeType": "Branch",
+          "source": "fbf05c74582c4306a9d3106910c0ee6a",
+          "target": "038c0b2e15694359b96157e547808f67",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check=Check Ticket Status",
+            "mode": "query"
+          },
+          "label": "Existing "
+        },
+        {
+          "id": "c906699dce56434e81e522f0e22904dd",
+          "edgeType": "Edge",
+          "source": "c28fe821c9714e3e936d6fb67230c6b3",
+          "target": "43bf95d48e71480390d05e2272c80804",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0c26714da14b4cfe92d9771c0e1e1ade",
+          "edgeType": "Branch",
+          "source": "43bf95d48e71480390d05e2272c80804",
+          "target": "268e000793ed4082b764ffe27d47f310",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.ticket_detailsISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "yes"
+        },
+        {
+          "id": "ad8868fc88d3418c99ea8d975b14d409",
+          "edgeType": "Branch",
+          "source": "43bf95d48e71480390d05e2272c80804",
+          "target": "be14d3f9651d4029b2210df4d4819ecc",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.ticket_detailsISEMPTY",
+            "mode": "query"
+          },
+          "label": "NO"
+        },
+        {
+          "id": "79d23603a03b41d2863d37e15d9860b9",
+          "edgeType": "Edge",
+          "source": "d88f181e79fe495eb3793621fda3b0d7",
+          "target": "2732e486abd6436aba0b2f082e7bc3b3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c7f0bfcf96d74ddc8eded709b9c5f300",
+          "edgeType": "Edge",
+          "source": "038c0b2e15694359b96157e547808f67",
+          "target": "1680044fbd1447049d19c868271d0ecc",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "452c93129ef04c9c87dbfe2c118eb9c8",
+          "edgeType": "Edge",
+          "source": "1680044fbd1447049d19c868271d0ecc",
+          "target": "c28fe821c9714e3e936d6fb67230c6b3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5062c9fc81504f629bd52c97164ea6e0",
+          "edgeType": "Edge",
+          "source": "be14d3f9651d4029b2210df4d4819ecc",
+          "target": "47436ea4547e4f7290283e859f9b6fe4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "45222cb0e6754aa9a9dd083d56e7dfab",
+          "edgeType": "Edge",
+          "source": "47436ea4547e4f7290283e859f9b6fe4",
+          "target": "c28fe821c9714e3e936d6fb67230c6b3",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3e86c9736f0f4a279252598df781639a",
+          "edgeType": "Edge",
+          "source": "561c017effe54ed7a01bfb6346264e3a",
+          "target": "fce4821727b649f49285e07389c57179",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "128e5046a5c04f7bbd9774d64abeb715",
+          "edgeType": "Edge",
+          "source": "fce4821727b649f49285e07389c57179",
+          "target": "5ba1c446cf984ac5a6fcddf5b18d3b78",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "21ce58c4296246bd8d23df99d2d56e8a": {
+      "category": "vaInputs",
+      "id": "21ce58c4296246bd8d23df99d2d56e8a",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "34e982a332db4da58ad0e3eceaf66e2d": {
+      "id": "34e982a332db4da58ad0e3eceaf66e2d",
+      "name": "short_description",
+      "label": "Short Description",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTc1NjkwMTIzODI4NSBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "561c017effe54ed7a01bfb6346264e3a",
+      "isHidden": false
+    },
+    "5a6e9110d20e4bf0a436180ca917fd45": {
+      "id": "5a6e9110d20e4bf0a436180ca917fd45",
+      "name": "createproblemrec",
+      "label": "CreateProblemREc",
+      "varType": "reference",
+      "table": "problem",
+      "inactive": false,
+      "category": "vaInputs",
+      "nodeId": "10af312c84d147349679c443fceb793b",
+      "isHidden": false
+    },
+    "6060331eff8b475da14f799b86d63d75": {
+      "id": "6060331eff8b475da14f799b86d63d75",
+      "name": "check",
+      "label": "Check",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Check Ticket Status",
+          "value": "Check Ticket Status"
+        },
+        {
+          "label": "Register New Issue",
+          "value": "Register New Issue"
+        }
+      ],
+      "category": "vaInputs",
+      "nodeId": "74cf5a6a73ee4409837d7d821eaa071b",
+      "isHidden": false
+    },
+    "5fb18a0efe30491cb63eabe367b93858": {
+      "id": "5fb18a0efe30491cb63eabe367b93858",
+      "name": "ticket_number",
+      "label": "Ticket Number",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTc1NjkxMzQ5MDU3MyBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "038c0b2e15694359b96157e547808f67",
+      "isHidden": false
+    },
+    "339858fd7055476ba6956090cc5fcfee": {
+      "id": "339858fd7055476ba6956090cc5fcfee",
+      "name": "ticket_details",
+      "label": "Ticket Details",
+      "varType": "reference",
+      "table": "problem",
+      "category": "vaInputs",
+      "nodeId": "268e000793ed4082b764ffe27d47f310",
+      "isHidden": false
+    },
+    "c20d4b2c9ee848139fff20d9bfcaac80": {
+      "id": "c20d4b2c9ee848139fff20d9bfcaac80",
+      "name": "error",
+      "label": "Error",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTc1NjkxODUyNDQyNiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "be14d3f9651d4029b2210df4d4819ecc",
+      "isHidden": false
+    },
+    "448a746681d640f4b01f6dd849c5f274": {
+      "id": "448a746681d640f4b01f6dd849c5f274",
+      "name": "confimation",
+      "label": "Confimation",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "d88f181e79fe495eb3793621fda3b0d7",
+      "isHidden": false
+    },
+    "379a9ecac15a40219896bff84e59f12c": {
+      "id": "379a9ecac15a40219896bff84e59f12c",
+      "value": {
+        "mode": "simple",
+        "value": ""
+      },
+      "name": "TicketNumber",
+      "label": "TicketNumber",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "42209b2c5ed242f294bdbf61988e7d0f": {
+      "id": "42209b2c5ed242f294bdbf61988e7d0f",
+      "name": "description",
+      "label": "Description",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTc1Njk4NTAxMDYwNiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "fce4821727b649f49285e07389c57179",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>Report An Issue,Network,Issue,Ticket,Laptop,Not Working</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>Report An Issue</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id>6336ec85933fe2107b32f0ba2bba1085</root_topic_id>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id>6336ec85933fe2107b32f0ba2bba1085</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>manikumar</sys_created_by>
+        <sys_created_on>2025-09-04 11:15:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>5f14a55d937766107b32f0ba2bba109d</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Report An Issue</sys_name>
+        <sys_package display_value="EquiTech" source="x_1580623_equitech">fd906109937326107b32f0ba2bba1054</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EquiTech">fd906109937326107b32f0ba2bba1054</sys_scope>
+        <sys_update_name>sys_cb_topic_5f14a55d937766107b32f0ba2bba109d</sys_update_name>
+        <sys_updated_by>manikumar</sys_updated_by>
+        <sys_updated_on>2025-09-04 12:07:14</sys_updated_on>
+        <title>Report An Issue</title>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=5f14a55d937766107b32f0ba2bba109d"/>
+</record_update>

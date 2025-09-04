@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_scope_privilege">
+    <sys_scope_privilege action="INSERT_OR_UPDATE">
+        <operation>create</operation>
+        <source_scope display_value="EquiTech">fd906109937326107b32f0ba2bba1054</source_scope>
+        <status>allowed</status>
+        <sys_class_name>sys_scope_privilege</sys_class_name>
+        <sys_created_by>manikumar</sys_created_by>
+        <sys_created_on>2025-09-04 11:30:23</sys_created_on>
+        <sys_id>34972d9193b766107b32f0ba2bba1097</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>problem</sys_name>
+        <sys_package display_value="EquiTech" source="x_1580623_equitech">fd906109937326107b32f0ba2bba1054</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EquiTech">fd906109937326107b32f0ba2bba1054</sys_scope>
+        <sys_update_name>sys_scope_privilege_34972d9193b766107b32f0ba2bba1097</sys_update_name>
+        <sys_updated_by>manikumar</sys_updated_by>
+        <sys_updated_on>2025-09-04 11:30:23</sys_updated_on>
+        <target_name>problem</target_name>
+        <target_scope display_value="Global">global</target_scope>
+        <target_type>sys_db_object</target_type>
+    </sys_scope_privilege>
+</record_update>
