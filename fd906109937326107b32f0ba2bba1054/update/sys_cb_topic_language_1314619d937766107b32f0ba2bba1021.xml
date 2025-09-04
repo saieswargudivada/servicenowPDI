@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_language">
+    <sys_cb_topic_language action="INSERT_OR_UPDATE">
+        <cb_topic_id display_value="Report An Issue">5f14a55d937766107b32f0ba2bba109d</cb_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[{"node_id":"561c017effe54ed7a01bfb6346264e3a","variable_name":"short_description","nlu_entity":"","nlu_entity_label":""},{"node_id":"74cf5a6a73ee4409837d7d821eaa071b","variable_name":"check","nlu_entity":"","nlu_entity_label":""},{"node_id":"038c0b2e15694359b96157e547808f67","variable_name":"ticket_number","nlu_entity":"","nlu_entity_label":""},{"node_id":"be14d3f9651d4029b2210df4d4819ecc","variable_name":"error","nlu_entity":"","nlu_entity_label":""},{"node_id":"d88f181e79fe495eb3793621fda3b0d7","variable_name":"confimation","nlu_entity":"","nlu_entity_label":""},{"node_id":"fce4821727b649f49285e07389c57179","variable_name":"description","nlu_entity":"","nlu_entity_label":""}]</nlu_entities>
+        <nlu_intent>CreateProblem</nlu_intent>
+        <nlu_intent_label>CreateProblem</nlu_intent_label>
+        <nlu_model>sn_itsm_nlu_ITSM_NLU_for_VA</nlu_model>
+        <nlu_model_label>ITSM NLU for Virtual Agent</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cb_topic_language</sys_class_name>
+        <sys_created_by>manikumar</sys_created_by>
+        <sys_created_on>2025-09-04 11:15:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>1314619d937766107b32f0ba2bba1021</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="EquiTech" source="x_1580623_equitech">fd906109937326107b32f0ba2bba1054</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EquiTech">fd906109937326107b32f0ba2bba1054</sys_scope>
+        <sys_update_name>sys_cb_topic_language_1314619d937766107b32f0ba2bba1021</sys_update_name>
+        <sys_updated_by>manikumar</sys_updated_by>
+        <sys_updated_on>2025-09-04 11:28:09</sys_updated_on>
+    </sys_cb_topic_language>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>thanks! can you provide a few more details about the issue, so we can create a complete support ticket for you.</key>
+        <language>en</language>
+        <message>Thanks! Can you provide a few more details about the issue, so we can create a complete support ticket for you.</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>manikumar</sys_created_by>
+        <sys_created_on>2025-09-04 11:28:21</sys_created_on>
+        <sys_id>5f17e55193b766107b32f0ba2bba1087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>thanks! can you provide a few more details about the issue, so we can create a complete support ticket for you.</sys_name>
+        <sys_package display_value="EquiTech" source="x_1580623_equitech">fd906109937326107b32f0ba2bba1054</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="EquiTech">fd906109937326107b32f0ba2bba1054</sys_scope>
+        <sys_update_name>sys_ui_message_5f17e55193b766107b32f0ba2bba1087</sys_update_name>
+        <sys_updated_by>manikumar</sys_updated_by>
+        <sys_updated_on>2025-09-04 11:28:21</sys_updated_on>
+    </sys_ui_message>
+</record_update>
